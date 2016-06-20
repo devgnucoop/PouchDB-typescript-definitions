@@ -17,6 +17,14 @@ declare module pouchDB {
   interface IPouchDB {
     new (name: string): IPouchDB;
     new (name: string, options: Options.IBase): IPouchDB;
+    new (options: {
+      adapter: 'socket',
+      name: string,
+      url: string,
+      socketOptions?: {
+        path: string
+      }
+    }): IPouchDB;
 
     /** Delete the database. Note that this has no impact on other replicated databases.*/
     destroy(): Promise<any>;
