@@ -22,7 +22,10 @@ declare module pouchDB {
       name: string,
       url: string,
       socketOptions?: {
-        path: string
+        path: string,
+        extraHeaders: {
+          [headerName: string]: string
+        }
       }
     }): IPouchDB;
 
