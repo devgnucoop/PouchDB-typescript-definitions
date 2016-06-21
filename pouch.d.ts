@@ -22,8 +22,8 @@ declare module pouchDB {
       name: string,
       url: string,
       socketOptions?: {
-        path: string,
-        extraHeaders: {
+        path?: string,
+        extraHeaders?: {
           [headerName: string]: string
         }
       }
@@ -146,26 +146,28 @@ declare module pouchDB {
   interface IPouchDBFindRequest {
     selector: {
       [propName: string]: any | {
-        $lt?: any;
-        $gt?: any;
-        $lte?: any;
-        $gte?: any;
-        $eq?: any;
-        $exists?: any;
-        $type?: any;
-        $nin?: any;
-        $all?: any;
-        $size?: any;
-        $or?: any;
-        $nor?: any;
-        $not?: any;
-        $mod?: any;
-        $regex?: any;
-        $elemMatch: any;
+        $lt?: any,
+        $gt?: any,
+        $lte?: any,
+        $gte?: any,
+        $eq?: any,
+        $exists?: any,
+        $type?: any,
+        $nin?: any,
+        $all?: any,
+        $size?: any,
+        $or?: any,
+        $nor?: any,
+        $not?: any,
+        $mod?: any,
+        $regex?: any,
+        $elemMatch: any
       };
     };
     fields?: string[];
-    sort?: string[];
+    sort?: Array<string | {
+      [propName: string]: 'desc' | 'asc'
+    }>;
     limit?: number;
     skip?: number;
   }
@@ -389,18 +391,18 @@ declare module pouchDB {
        Appends a random string to the end of all HTTP GET requests to avoid them being cached on IE.
        Set this to true to prevent this happening.
        */
-      cache: boolean;
+      cache?: boolean;
       /** will allow you to set the max timeout for an HTTP request */
-      timeout: number;
+      timeout?: number;
       /**
        The ajax.headers option allows you to customise headers that are sent to the remote HTTP Server.
        */
-      headers: any;
+      headers?: any;
       /**
        Set to false to disable transferring cookies or HTTP Auth information.
        Defaults to true
        */
-      withCredentials: boolean;
+      withCredentials?: boolean;
     }
 
     interface ISync {
@@ -447,6 +449,8 @@ declare module pouchDB {
        Defaults to a function that chooses a random backoff between 0 and 2 seconds
        and doubles every time it fails to connect. */
       back_off_function?: any;
+
+      ajax?: IAjax;
 
     }
 
