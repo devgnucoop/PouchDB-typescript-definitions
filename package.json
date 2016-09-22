@@ -1,18 +1,35 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es6",
-        "noImplicitAny": true,
-        "strictNullChecks": false,
-        "baseUrl": "../",
-        "typeRoots": [
-            "../"
-        ],
-        "types": [],
-        "noEmit": true,
-        "forceConsistentCasingInFileNames": true
-    },
-    "files": [
-        "pouchdb.d.ts"
-    ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    "baseUrl": "../",
+    "typeRoots": [
+      "../"
+    ],
+    "types": [],
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "files": [
+    "pouchdb.d.ts"
+  ],
+  "name": "@types/pouchdb",
+  "description": "New Typings for PouchDB 5.3.1",
+  "version": "5.4.5",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://devgnucoop@github.com/devgnucoop/PouchDB-typescript-definitions.git"
+  },
+  "author": "gnucoop",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devgnucoop/PouchDB-typescript-definitions/issues"
+  },
+  "homepage": "https://github.com/devgnucoop/PouchDB-typescript-definitions#readme"
 }
