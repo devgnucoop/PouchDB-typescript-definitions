@@ -13,7 +13,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "files": [
-    "pouch.d.ts"
+    "index.d.ts"
   ],
   "name": "@types/pouchdb",
   "description": "New Typings for PouchDB 5.3.1",
