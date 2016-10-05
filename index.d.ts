@@ -447,6 +447,8 @@ declare module pouchDB {
        and doubles every time it fails to connect. */
       back_off_function?: any;
 
+      timeout?: number;
+
       ajax?: IAjax;
 
     }
